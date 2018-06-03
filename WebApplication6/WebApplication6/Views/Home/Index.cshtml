@@ -1,0 +1,17 @@
+﻿@model WebApplication6.Models.LoginModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Session["ID"] == null)
+{
+    Response.Redirect("~/Login/Index");
+}
+
+<h2>登入成功</h2>
+
+帳號：@Session["UserName"]<br />
+
+@Html.ActionLink("登出", "LogOut","Login")
